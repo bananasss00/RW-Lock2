@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+    <lockTab>Доступ</lockTab>
+    <locks2Tab>Настройка доступа</locks2Tab>
+	<ConfigRuleAnimals>Фильтр: Животные</ConfigRuleAnimals>
+    <ConfigRuleApparel>Фильтр: Одежда</ConfigRuleApparel>
+    <ConfigRuleColonists>Фильтр: Поселенцы</ConfigRuleColonists>
+    <ConfigRuleGameCondition>Фильтр: Условия игры</ConfigRuleGameCondition>
+    <ConfigRuleGuests>Фильтр: Гости</ConfigRuleGuests>
+    <ConfigRuleIgnorDrafted>Фильтр: Призванные поселенцы</ConfigRuleIgnorDrafted>
+    <ConfigRuleInverseColonists>Фильтр: Поселенцы(белый список)</ConfigRuleInverseColonists>
+    <ConfigRulePrisoners>Фильтр: Заключенные</ConfigRulePrisoners>
+	<ConfigRuleRace>Фильтр: Расы</ConfigRuleRace>
+    <ConfigRuleBedRoom>Фильтр: Только владельцы спальни</ConfigRuleBedRoom>
+	<Locks2DoorSettings>Настройки двери</Locks2DoorSettings>
+    <Locks2Or>- ИЛИ -</Locks2Or>
+    <Locks2Close>Закрыть</Locks2Close>
+    <Locks2OrTooltip>Одно из этих правил должно применяться для пешки, чтобы пройти</Locks2OrTooltip>
+    <Locks2Animals>Разрешить: Животные</Locks2Animals>
+    <Locks2ApparelFilter>Разрешить: Одежда поселенцев и гостей</Locks2ApparelFilter>
+    <Locks2ApparelFilterBody>Пешки должны носить:</Locks2ApparelFilterBody>
+    <Locks2BedRoomFilter>Разрешить: Только владельцы спальни</Locks2BedRoomFilter>
+    <Locks2BedRoomFilterHint>Разрешено пройти, пока в комнате есть неназначенные кровати</Locks2BedRoomFilterHint>
+    <Locks2ColonistsFilter>Разрешить: Все поселенцы кроме</Locks2ColonistsFilter>
+    <Locks2ColonistsFilterBlacklist>Чёрный список колонистов:</Locks2ColonistsFilterBlacklist>
+    <Locks2GameConditionFilter>Разрешить: Когда игровое условие не активно</Locks2GameConditionFilter>
+    <Locks2DenyIf>Запретить если:</Locks2DenyIf>
+    <Locks2GuestsFilter>Разрешить: Гости и союзники</Locks2GuestsFilter>
+    <Locks2DraftedPawns>Разрешить: Призванные колонисты</Locks2DraftedPawns>
+    <Locks2ColonistInvertedFilter>Разрешить: Только поселенцы из списка</Locks2ColonistInvertedFilter>
+    <Locks2ColonistInvertedFilterWhitelist>Белый список поселенцев:</Locks2ColonistInvertedFilterWhitelist>
+    <Locks2PrisonersFilter>Разрешить: Заключенные</Locks2PrisonersFilter>
+    <Locks2RaceFilter>Разрешить: Раса</Locks2RaceFilter>
+    <Locks2RaceFilterWhitelist>Разрешенные расы:</Locks2RaceFilterWhitelist>
+    <Locks2SettingsPerformance>Параметры быстродействия:</Locks2SettingsPerformance>
+    <Locks2SettingsCache>Интервал кеширования</Locks2SettingsCache>
+    <Locks2SettingsCacheTooltip>Более низкие значения приведут к большему влиянию на производительность, но более отзывчивой системе блокировки. Рекомендуется оставить это значение по умолчанию равным 1800 тиками</Locks2SettingsCacheTooltip>
+    <Locks2SettingsAccessTab>Размер и вид вкладки "Доступ":</Locks2SettingsAccessTab>
+    <Locks2SettingsAccessTabX>Ширина</Locks2SettingsAccessTabX>
+    <Locks2SettingsAccessTabY>Высота</Locks2SettingsAccessTabY>
+    <Locks2SettingsDefaults>По умолчанию:</Locks2SettingsDefaults>
+    <Locks2SettingsDefaultsAre>Правила по умолчанию</Locks2SettingsDefaultsAre>
+    <Locks2SettingsOthers>Другие настройки:</Locks2SettingsOthers>
+    <Locks2SettingReset>Сбросить</Locks2SettingReset>
+    <Locks2SettingsEnableDebugging>Включить режим разработчика</Locks2SettingsEnableDebugging>
+    <Locks2SettingsDebuggingTooltip>Включить режим разработчика для продвинутых пользователей</Locks2SettingsDebuggingTooltip>
+    <Locks2SettingsDebuggingWarning>ВНИМАНИЕ ЭТО ТОЛЬКО ДЛЯ РАЗРАБОТЧИКОВ!</Locks2SettingsDebuggingWarning>
+	<Locks2Confirm>Вы уверены?</Locks2Confirm>
+    <Locks2ConfirmYes>Да</Locks2ConfirmYes>
+    <Locks2ConfirmNo>Нет</Locks2ConfirmNo>
+	<Locks2AnimalsGenderFilter>Разрешить только</Locks2AnimalsGenderFilter>
+    <Locks2AnimalsGenderMale>Мужчины</Locks2AnimalsGenderMale>
+    <Locks2AnimalsGenderFemale>Женщины</Locks2AnimalsGenderFemale>
+    <Locks2AnimalsAgeFilter>Разрешить животным в возрасте до</Locks2AnimalsAgeFilter>    
+</LanguageData>
