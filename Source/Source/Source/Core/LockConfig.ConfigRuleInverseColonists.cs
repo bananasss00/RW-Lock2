@@ -15,7 +15,7 @@ namespace Locks2.Core
 
             private readonly List<Pawn> removalPawns = new List<Pawn>();
 
-            public HashSet<Pawn> whiteSet = new HashSet<Pawn>();
+            public HashSet<Pawn> whiteSet = new HashSet<Pawn>(PawnComparer.Instance);
 
             public override float Height => (enabled ? whiteSet.Count * 25 + 75f : 54) + 15;
 
@@ -29,7 +29,7 @@ namespace Locks2.Core
 
             public override IConfigRule Duplicate()
             {
-                return new ConfigRuleInverseColonists { enabled = enabled, whiteSet = new HashSet<Pawn>(whiteSet) };
+                return new ConfigRuleInverseColonists { enabled = enabled, whiteSet = new HashSet<Pawn>(whiteSet, PawnComparer.Instance) };
             }
 
             public override void DoContent(IEnumerable<Pawn> pawns, Rect rect, Action notifySelectionBegan,
@@ -83,7 +83,7 @@ namespace Locks2.Core
                 Scribe_Values.Look(ref enabled, "enabled", true);
                 if (Scribe.mode == LoadSaveMode.Saving) whiteSet.RemoveWhere(p => p == null || p.Destroyed || p.Dead);
                 Scribe_Collections.Look(ref whiteSet, "whitset", LookMode.Reference);
-                if (whiteSet == null) whiteSet = new HashSet<Pawn>();
+                if (whiteSet == null) whiteSet = new HashSet<Pawn>(PawnComparer.Instance);
             }
 
             private void DoExtraContent(Action<Pawn> onSelection, IEnumerable<Pawn> pawns, Action notifySelectionEnded)

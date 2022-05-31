@@ -13,7 +13,7 @@ namespace Locks2.Core
         {
             public bool enabled;
 
-            public HashSet<GameConditionDef> conditionsSet = new HashSet<GameConditionDef>();
+            public HashSet<GameConditionDef> conditionsSet = new HashSet<GameConditionDef>(GameConditionDefComparer.Instance);
 
             public List<GameConditionDef> removalSet = new List<GameConditionDef>();
 
@@ -29,7 +29,7 @@ namespace Locks2.Core
 
             public override IConfigRule Duplicate()
             {
-                return new ConfigRuleGameCondition { enabled = enabled, conditionsSet = new HashSet<GameConditionDef>(conditionsSet) };
+                return new ConfigRuleGameCondition { enabled = enabled, conditionsSet = new HashSet<GameConditionDef>(conditionsSet, GameConditionDefComparer.Instance) };
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]

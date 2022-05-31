@@ -14,7 +14,7 @@ namespace Locks2.Core
             private static IEnumerable<ThingDef> allApparel;
 
             private readonly Dictionary<int, Pair<bool, int>> _cache = new Dictionary<int, Pair<bool, int>>();
-            public HashSet<ThingDef> apparelSet = new HashSet<ThingDef>();
+            public HashSet<ThingDef> apparelSet = new HashSet<ThingDef>(ThingDefComparer.Instance);
             public bool enabled;
 
             private readonly List<ThingDef> removalSet = new List<ThingDef>();
@@ -59,7 +59,7 @@ namespace Locks2.Core
 
             public override IConfigRule Duplicate()
             {
-                return new ConfigRuleApparel { enabled = enabled, apparelSet = new HashSet<ThingDef>(apparelSet) };
+                return new ConfigRuleApparel { enabled = enabled, apparelSet = new HashSet<ThingDef>(apparelSet, ThingDefComparer.Instance) };
             }
 
             public override void DoContent(IEnumerable<Pawn> pawns, Rect rect, Action notifySelectionBegan,

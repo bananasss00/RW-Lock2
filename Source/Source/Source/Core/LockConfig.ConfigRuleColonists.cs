@@ -11,7 +11,7 @@ namespace Locks2.Core
     {
         public class ConfigRuleColonists : IConfigRule
         {
-            public HashSet<Pawn> blackSet = new HashSet<Pawn>();
+            public HashSet<Pawn> blackSet = new HashSet<Pawn>(PawnComparer.Instance);
             public bool enabled = true;
 
             private readonly List<Pawn> removalPawns = new List<Pawn>();
@@ -26,7 +26,7 @@ namespace Locks2.Core
 
             public override IConfigRule Duplicate()
             {
-                return new ConfigRuleColonists { enabled = enabled, blackSet = new HashSet<Pawn>(blackSet) };
+                return new ConfigRuleColonists { enabled = enabled, blackSet = new HashSet<Pawn>(blackSet, PawnComparer.Instance) };
             }
 
             public override void DoContent(IEnumerable<Pawn> pawns, Rect rect, Action notifySelectionBegan,
@@ -77,7 +77,7 @@ namespace Locks2.Core
                 Scribe_Values.Look(ref enabled, "enabled", true);
                 if (Scribe.mode == LoadSaveMode.Saving) blackSet.RemoveWhere(p => p == null || p.Destroyed || p.Dead);
                 Scribe_Collections.Look(ref blackSet, "blackset", LookMode.Reference);
-                if (blackSet == null) blackSet = new HashSet<Pawn>();
+                if (blackSet == null) blackSet = new HashSet<Pawn>(PawnComparer.Instance);
             }
 
             private void DoExtraContent(Action<Pawn> onSelection, IEnumerable<Pawn> pawns, Action notifySelectionEnded)

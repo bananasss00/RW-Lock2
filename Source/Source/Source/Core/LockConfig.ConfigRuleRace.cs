@@ -14,7 +14,7 @@ namespace Locks2.Core
             private static IEnumerable<ThingDef> racesDefs;
 
             private readonly List<ThingDef> removalKinds = new List<ThingDef>();
-            public HashSet<ThingDef> whiteSet = new HashSet<ThingDef>();
+            public HashSet<ThingDef> whiteSet = new HashSet<ThingDef>(ThingDefComparer.Instance);
 
             public override float Height => (enabled ? whiteSet.Count * 25 + 75f : 54) + 15;
 
@@ -27,7 +27,7 @@ namespace Locks2.Core
 
             public override IConfigRule Duplicate()
             {
-                return new ConfigRuleRace { enabled = enabled, whiteSet = new HashSet<ThingDef>(whiteSet) };
+                return new ConfigRuleRace { enabled = enabled, whiteSet = new HashSet<ThingDef>(whiteSet, ThingDefComparer.Instance) };
             }
 
             public override void DoContent(IEnumerable<Pawn> pawns, Rect rect, Action notifySelectionBegan,
@@ -77,7 +77,7 @@ namespace Locks2.Core
             {
                 base.ExposeData();
                 Scribe_Collections.Look(ref whiteSet, "whiteset", LookMode.Def);
-                if (whiteSet == null) whiteSet = new HashSet<ThingDef>();
+                if (whiteSet == null) whiteSet = new HashSet<ThingDef>(ThingDefComparer.Instance);
             }
 
             private void DoExtraContent(Action<Def> onSelection, IEnumerable<ThingDef> defs,
