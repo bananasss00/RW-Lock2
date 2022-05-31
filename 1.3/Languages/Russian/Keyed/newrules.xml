@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <ConfigRuleDrons>Фильтр: Дроны</ConfigRuleDrons>
+    <Locks2DronsFilter>Разрешить: Боты переносчики и уборщики</Locks2DronsFilter>
+	
+    <ConfigRulePens>Фильтр: Загон</ConfigRulePens>
+    <Locks2PensFilter>Разрешить: Дверь загона</Locks2PensFilter>
+</LanguageData>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <ConfigRuleDrons>Drons filter</ConfigRuleDrons>
+    <Locks2DronsFilter>Allow haul and cleaner bots</Locks2DronsFilter>
+	
+	<ConfigRulePens>Pens filter</ConfigRulePens>
+    <Locks2PensFilter>Allow pens filter</Locks2PensFilter>
+</LanguageData>
