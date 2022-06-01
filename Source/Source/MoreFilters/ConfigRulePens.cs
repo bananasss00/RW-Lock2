@@ -11,6 +11,7 @@ using Verse;
 namespace Locks2.MoreFilters
 {
     [HarmonyPatch(typeof(LockConfig.ConfigRuleAnimals), nameof(LockConfig.ConfigRuleAnimals.Allows))]
+    [HotSwappable]
     public class ConfigRuleAnimals_Fix
     {
         [HarmonyPostfix]
@@ -28,6 +29,7 @@ namespace Locks2.MoreFilters
         }
     }
 
+    [HotSwappable]
     public class ConfigRulePens : LockConfig.IConfigRule
     {
         public override float Height => 54;

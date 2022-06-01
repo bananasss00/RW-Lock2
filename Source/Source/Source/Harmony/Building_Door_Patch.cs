@@ -53,7 +53,7 @@ namespace Locks2.Harmony
                 return false;
             }
 
-            if (!(__instance.Map?.IsPlayerHome ?? false) || p == null) return true;
+            if (!(__instance.Map?.IsPlayerHome ?? false) || p == null || (p.roping?.IsRopedByPawn ?? false)) return true;
             var config = Finder.currentConfig = __instance.GetConfig();
             if (config == null) return true;
             if (config.Allows(p))
