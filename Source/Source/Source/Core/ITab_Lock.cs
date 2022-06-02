@@ -195,7 +195,7 @@ namespace Locks2.Core
                 currentY += rule.Height;
                 if (counter < config.rules.Count - 1)
                 {
-                    FillSeperator(new Rect(0, currentY, inRect.width, 20));
+                    FillSeperator(new Rect(0, currentY, inRect.width, 20), ref rule.condition);
                 }
                 currentY += 20;
 
@@ -255,13 +255,22 @@ namespace Locks2.Core
             }
         }
 
-        private void FillSeperator(Rect rect)
+        private void FillSeperator(Rect rect, ref Condition condition)
         {
             var font = Text.Font;
             var anchor = Text.Anchor;
             Text.Anchor = TextAnchor.MiddleCenter;
             Text.Font = GameFont.Tiny;
-            Widgets.Label(rect, "Locks2Or".Translate());
+            Widgets.Label(rect, condition == Condition.Or ? "Locks2Or".Translate() : "Locks2And".Translate());
+            if (Widgets.ButtonInvisible(rect))
+            {
+                if (condition == Condition.Or)
+                    condition = Condition.And;
+                else
+                    condition = Condition.Or;
+                Notify_Dirty();
+            }
+            Widgets.DrawHighlightIfMouseover(rect);
             Text.Anchor = anchor;
             Text.Font = font;
         }

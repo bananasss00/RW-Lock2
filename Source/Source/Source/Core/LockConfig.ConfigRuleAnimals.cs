@@ -81,6 +81,7 @@ namespace Locks2.Core
             {
                 return new ConfigRuleAnimals
                 {
+                    condition = condition,
                     enabled = enabled,
                     ageFilter = ageFilter,
                     ageFilterEnabled = ageFilterEnabled,
@@ -91,6 +92,7 @@ namespace Locks2.Core
 
             public override void ExposeData()
             {
+                base.ExposeData();
                 Scribe_Values.Look(ref enabled, "enabled", true);
                 Scribe_Values.Look(ref genderFilterEnabled, "genderFilterEnabled");
                 Scribe_Values.Look(ref allowedGender, "allowedGender");

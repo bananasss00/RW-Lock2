@@ -14,6 +14,7 @@
     <ConfigRuleBedRoom>Фильтр: Только владельцы спальни</ConfigRuleBedRoom>
 	<Locks2DoorSettings>Настройки двери</Locks2DoorSettings>
     <Locks2Or>- ИЛИ -</Locks2Or>
+	<Locks2And>- И -</Locks2And>
     <Locks2Close>Закрыть</Locks2Close>
     <Locks2OrTooltip>Одно из этих правил должно применяться для пешки, чтобы пройти</Locks2OrTooltip>
     <Locks2Animals>Разрешить: Животные</Locks2Animals>

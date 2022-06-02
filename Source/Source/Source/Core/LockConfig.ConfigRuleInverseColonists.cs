@@ -29,7 +29,7 @@ namespace Locks2.Core
 
             public override IConfigRule Duplicate()
             {
-                return new ConfigRuleInverseColonists { enabled = enabled, whiteSet = new HashSet<Pawn>(whiteSet, PawnComparer.Instance) };
+                return new ConfigRuleInverseColonists { condition = condition, enabled = enabled, whiteSet = new HashSet<Pawn>(whiteSet, PawnComparer.Instance) };
             }
 
             public override void DoContent(IEnumerable<Pawn> pawns, Rect rect, Action notifySelectionBegan,
@@ -80,6 +80,7 @@ namespace Locks2.Core
 
             public override void ExposeData()
             {
+                base.ExposeData();
                 Scribe_Values.Look(ref enabled, "enabled", true);
                 if (Scribe.mode == LoadSaveMode.Saving) whiteSet.RemoveWhere(p => p == null || p.Destroyed || p.Dead);
                 Scribe_Collections.Look(ref whiteSet, "whitset", LookMode.Reference);

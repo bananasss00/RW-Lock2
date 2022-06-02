@@ -27,7 +27,7 @@ namespace Locks2.Core
 
             public override IConfigRule Duplicate()
             {
-                return new ConfigRuleRace { enabled = enabled, whiteSet = new HashSet<ThingDef>(whiteSet, ThingDefComparer.Instance) };
+                return new ConfigRuleRace { condition = condition, enabled = enabled, whiteSet = new HashSet<ThingDef>(whiteSet, ThingDefComparer.Instance) };
             }
 
             public override void DoContent(IEnumerable<Pawn> pawns, Rect rect, Action notifySelectionBegan,

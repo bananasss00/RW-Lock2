@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Verse;
 
@@ -67,9 +68,30 @@ namespace Locks2.Core
 
         private bool AllowsInternal(Pawn pawn)
         {
+            // split rules by OR condition
+            var andChains = new List<List<IConfigRule>>();
+            var currentChain = new List<IConfigRule>();
             foreach (var rule in rules)
-                if (rule.Allows(pawn))
+            {
+                currentChain.Add(rule);
+                if (rule.condition == Condition.Or)
+                {
+                    andChains.Add(currentChain);
+                    currentChain = new List<IConfigRule>();
+                }
+            }
+            if (currentChain.Any())
+            {
+                andChains.Add(currentChain);
+            }
+
+            // check allows AND
+            foreach (var chain in andChains)
+            {
+                if (chain.All(rule => rule.Allows(pawn)))
                     return true;
+            }
+
             return false;
         }
 
@@ -90,16 +112,29 @@ namespace Locks2.Core
             }
         }
 
+        public enum Condition
+        {
+            Or,
+            And
+        }
+
         public abstract class IConfigRule : IExposable
         {
             public abstract float Height { get; }
-            public abstract void ExposeData();
+
             public abstract bool Allows(Pawn pawn);
 
             public abstract void DoContent(IEnumerable<Pawn> pawns, Rect rect, Action notifySelectionBegan,
                 Action notifySelectionEnded);
 
             public abstract IConfigRule Duplicate();
+
+            public Condition condition = Condition.Or;
+
+            public virtual void ExposeData()
+            {
+                Scribe_Values.Look(ref condition, "condition");
+            }
         }
     }
 }

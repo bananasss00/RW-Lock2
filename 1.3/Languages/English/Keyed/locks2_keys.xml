@@ -14,6 +14,7 @@
     <ConfigRuleBedRoom>BedRoom filter</ConfigRuleBedRoom>
     <Locks2DoorSettings>Door Settings</Locks2DoorSettings>
     <Locks2Or>- OR -</Locks2Or>
+    <Locks2And>- And -</Locks2And>
     <Locks2Close>Close</Locks2Close>
     <Locks2OrTooltip>One of these rules must apply for a pawn to pass throught</Locks2OrTooltip>
     <Locks2Animals>Allow Animals</Locks2Animals>

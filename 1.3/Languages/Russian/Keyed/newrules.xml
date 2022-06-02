@@ -7,6 +7,6 @@
     <Locks2PensFilter>Разрешить: Дверь загона</Locks2PensFilter>
 	
 	<ConfigRuleHediffs>Фильтр: Хедиффы</ConfigRuleHediffs>
-    <Locks2HediffsFilter>Разрешить всем кроме:</Locks2HediffsFilter>
+    <Locks2HediffsFilter>Разрешить всем кроме</Locks2HediffsFilter>
     <Locks2HediffsFilterBlacklist>Черный список хедиффов:</Locks2HediffsFilterBlacklist>
 </LanguageData>

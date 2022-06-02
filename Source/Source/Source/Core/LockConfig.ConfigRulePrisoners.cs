@@ -32,11 +32,12 @@ namespace Locks2.Core
 
             public override IConfigRule Duplicate()
             {
-                return new ConfigRulePrisoners { enabled = enabled };
+                return new ConfigRulePrisoners { condition = condition, enabled = enabled };
             }
 
             public override void ExposeData()
             {
+                base.ExposeData();
                 Scribe_Values.Look(ref enabled, "enabled", true);
             }
         }

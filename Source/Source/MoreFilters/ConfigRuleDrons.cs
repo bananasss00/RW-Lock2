@@ -32,11 +32,12 @@ namespace Locks2.MoreFilters
 
         public override LockConfig.IConfigRule Duplicate()
         {
-            return new ConfigRuleDrons() { enabled = enabled };
+            return new ConfigRuleDrons() { condition = condition, enabled = enabled };
         }
 
         public override void ExposeData()
         {
+            base.ExposeData();
             Scribe_Values.Look<bool>(ref this.enabled, "enabled", true, false);
         }
 

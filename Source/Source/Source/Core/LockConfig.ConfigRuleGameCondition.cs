@@ -29,7 +29,7 @@ namespace Locks2.Core
 
             public override IConfigRule Duplicate()
             {
-                return new ConfigRuleGameCondition { enabled = enabled, conditionsSet = new HashSet<GameConditionDef>(conditionsSet, GameConditionDefComparer.Instance) };
+                return new ConfigRuleGameCondition { condition = condition, enabled = enabled, conditionsSet = new HashSet<GameConditionDef>(conditionsSet, GameConditionDefComparer.Instance) };
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -97,6 +97,7 @@ namespace Locks2.Core
 
             public override void ExposeData()
             {
+                base.ExposeData();
                 Scribe_Values.Look(ref enabled, "enabled", true);
                 Scribe_Collections.Look(ref conditionsSet, "conditionsSet", LookMode.Def);
             }

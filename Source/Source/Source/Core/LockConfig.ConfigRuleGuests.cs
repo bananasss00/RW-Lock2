@@ -31,7 +31,7 @@ namespace Locks2.Core
 
             public override IConfigRule Duplicate()
             {
-                return new ConfigRuleGuests { enabled = enabled };
+                return new ConfigRuleGuests { condition = condition, enabled = enabled };
             }
 
             public override void DoContent(IEnumerable<Pawn> pawns, Rect rect, Action notifySelectionBegan,
@@ -44,6 +44,7 @@ namespace Locks2.Core
 
             public override void ExposeData()
             {
+                base.ExposeData();
                 Scribe_Values.Look(ref enabled, "enabled", true);
             }
         }

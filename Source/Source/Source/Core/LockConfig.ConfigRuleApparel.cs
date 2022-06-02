@@ -59,7 +59,7 @@ namespace Locks2.Core
 
             public override IConfigRule Duplicate()
             {
-                return new ConfigRuleApparel { enabled = enabled, apparelSet = new HashSet<ThingDef>(apparelSet, ThingDefComparer.Instance) };
+                return new ConfigRuleApparel { condition = condition, enabled = enabled, apparelSet = new HashSet<ThingDef>(apparelSet, ThingDefComparer.Instance) };
             }
 
             public override void DoContent(IEnumerable<Pawn> pawns, Rect rect, Action notifySelectionBegan,
@@ -103,6 +103,7 @@ namespace Locks2.Core
 
             public override void ExposeData()
             {
+                base.ExposeData();
                 Scribe_Values.Look(ref enabled, "enabled", true);
                 Scribe_Collections.Look(ref apparelSet, "apparelSet", LookMode.Def);
             }

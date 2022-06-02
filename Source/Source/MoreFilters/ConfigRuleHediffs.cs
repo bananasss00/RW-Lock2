@@ -38,7 +38,7 @@ namespace Locks2.MoreFilters
 
         public override LockConfig.IConfigRule Duplicate()
         {
-            return new ConfigRuleHediffs { enabled = enabled, blackSet = new HashSet<HediffDef>(blackSet, HediffDefComparer.Instance) };
+            return new ConfigRuleHediffs { condition = condition, enabled = enabled, blackSet = new HashSet<HediffDef>(blackSet, HediffDefComparer.Instance) };
         }
 
         public override void DoContent(IEnumerable<Pawn> pawns, Rect rect, Action notifySelectionBegan,
@@ -87,6 +87,7 @@ namespace Locks2.MoreFilters
 
         public override void ExposeData()
         {
+            base.ExposeData();
             Scribe_Values.Look(ref enabled, "enabled", true);
             Scribe_Collections.Look(ref blackSet, "blackSet", LookMode.Def);
             if (blackSet == null) blackSet = new HashSet<HediffDef>(HediffDefComparer.Instance);
