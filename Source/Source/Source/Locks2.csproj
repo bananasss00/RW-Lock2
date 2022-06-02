@@ -44,9 +44,6 @@
 	<ItemGroup>
 		<None Remove="Core\" />
 	</ItemGroup>
-	<ItemGroup>
-		<Folder Include="Core\" />
-	</ItemGroup>
 	<Target Name="Publicise" BeforeTargets="UpdateReferences">
 		<!-- Set our variables -->
 		<PropertyGroup>

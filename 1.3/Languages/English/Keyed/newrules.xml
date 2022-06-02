@@ -5,4 +5,8 @@
 	
 	<ConfigRulePens>Pens filter</ConfigRulePens>
     <Locks2PensFilter>Allow pens filter</Locks2PensFilter>
+	
+	<ConfigRuleHediffs>Hediff filter</ConfigRuleHediffs>
+    <Locks2HediffsFilter>Allow all except:</Locks2HediffsFilter>
+    <Locks2HediffsFilterBlacklist>Blacklisted hediffs:</Locks2HediffsFilterBlacklist>
 </LanguageData>

@@ -49,4 +49,27 @@ namespace Locks2.Core
             return obj.GetHashCode();
         }
     }
+
+    public class HediffDefComparer : IEqualityComparer<HediffDef>
+    {
+        public static readonly HediffDefComparer Instance = new HediffDefComparer();
+
+        public bool Equals(HediffDef x, HediffDef y)
+        {
+            if (x == null && y == null)
+            {
+                return true;
+            }
+            if (x == null || y == null)
+            {
+                return false;
+            }
+            return x.shortHash == y.shortHash;
+        }
+
+        public int GetHashCode(HediffDef obj)
+        {
+            return obj.GetHashCode();
+        }
+    }
 }
