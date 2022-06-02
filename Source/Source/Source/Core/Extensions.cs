@@ -9,6 +9,12 @@ namespace Locks2.Core
         private static readonly Dictionary<int, int> _pawnSignature = new Dictionary<int, int>();
         private static readonly Dictionary<int, LockComp> _cache = new Dictionary<int, LockComp>();
 
+        public static void ClearCaches()
+        {
+            _cache.Clear();
+            _pawnSignature.Clear();
+        }
+
         public static LockConfig GetConfig(this Building door)
         {
             if (_cache.TryGetValue(door.thingIDNumber, out var comp)) return comp.config;

@@ -13,6 +13,11 @@ namespace Locks2.Core
         public Thing door;
         public List<IConfigRule> rules;
 
+        public static void ClearCaches()
+        {
+            configs.Clear();
+        }
+
         public LockConfig()
         {
             configs.Add(this);
