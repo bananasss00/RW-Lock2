@@ -47,7 +47,7 @@ namespace Locks2.Core
                 Text.Font = GameFont.Tiny;
                 foreach (var def in defs)
                 {
-                    if (searchString.Length > 0 && !def.label.ToLower().Contains(searchString))
+                    if (searchString.Length > 0 && (!def.label?.ToLower().Contains(searchString) ?? false))
                     {
                         continue;
                     }
